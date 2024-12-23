@@ -27,7 +27,7 @@ public class ApiV1PostController {
         credentials = credentials.substring("Bearer ".length());
         String[] credentialsBits = credentials.split("/", 2);
         long actorId = Long.parseLong(credentialsBits[0]);
-        long actorPassword = Long.parseLong(credentialsBits[1]);
+        String actorPassword = credentialsBits[1];
 
         Member actor = memberService.findById(actorId).get();
 
